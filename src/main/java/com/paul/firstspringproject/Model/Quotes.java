@@ -12,65 +12,62 @@ public class Quotes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
     @Column(columnDefinition = "VARCHAR(255) NOT NULL", nullable = false)
-    private String QuoteText;
+    private String QUOTETEXT;
 
     @ManyToOne
-    @JoinColumn(name = "UserIDOfUserWhoCreatedQuote", referencedColumnName = "ID")
-    private User UserIDOfUserWhoCreatedQuote;
+    @JoinColumn(name = "USERIDOFUSERWHOCREATEDQUOTE")
+    private User USERIDOFUSERWHOCREATEDQUOTE;
 
-    @Column(columnDefinition = "DATE")
-    private Date DateCreated;
+    @Column(columnDefinition = "DATECREATED")
+    private Date DATECREATED;
 
     @Column(columnDefinition = "int default 0")
-    private int upVotes;
-
-    @Column(columnDefinition = "int")
-    private int test;
+    private int UPVOTES;
 
     public Quotes() {
     }
 
-    public Quotes(int ID, String quoteText, User UserIDOfUserWhoCreatedQuote, Date dateCreated, int upVotes) {
+    public Quotes(int ID, String QUOTETEXT, User USERIDOFUSERWHOCREATEDQUOTE, Date DATECREATED, int UPVOTES) {
         this.ID = ID;
-        this.QuoteText = quoteText;
-        this.UserIDOfUserWhoCreatedQuote = UserIDOfUserWhoCreatedQuote;
-        this.DateCreated = dateCreated;
-        this.upVotes = upVotes;
+        this.QUOTETEXT = QUOTETEXT;
+        this.USERIDOFUSERWHOCREATEDQUOTE = USERIDOFUSERWHOCREATEDQUOTE;
+        this.DATECREATED = DATECREATED;
+        this.UPVOTES = UPVOTES;
     }
 
     public int getID() {
         return ID;
     }
 
-    public String getQuoteText() {
-        return QuoteText;
+    public String getQUOTETEXT() {
+        return QUOTETEXT;
     }
 
-    public void setQuoteText(String quoteText) {
-        QuoteText = quoteText;
+    public void setQUOTETEXT(String QUOTETEXT) {
+        this.QUOTETEXT = QUOTETEXT;
     }
 
-    public User getUserIDOfUserWhoCreatedQuote() {
-        return UserIDOfUserWhoCreatedQuote;
+    public User getUSERIDOFUSERWHOCREATEDQUOTE() {
+        return USERIDOFUSERWHOCREATEDQUOTE;
     }
 
-    public void setUserIDOfUserWhoCreatedQuote(User userIDOfUserWhoCreatedQuote) {
-        UserIDOfUserWhoCreatedQuote = userIDOfUserWhoCreatedQuote;
+    public void setUSERIDOFUSERWHOCREATEDQUOTE(User USERIDOFUSERWHOCREATEDQUOTE) {
+        this.USERIDOFUSERWHOCREATEDQUOTE = USERIDOFUSERWHOCREATEDQUOTE;
     }
 
     public Date getDateCreated() {
-        return DateCreated;
+        return DATECREATED;
     }
 
     public void setDateCreated(Date dateCreated) {
-        DateCreated = dateCreated;
+        DATECREATED = dateCreated;
     }
 
-    public int getUpVotes() {
-        return upVotes;
+    public int getUPVOTES() {
+        return UPVOTES;
     }
 
-    public void setUpVotes(int upVotes) {
-        this.upVotes = upVotes;
+    public void setUPVOTES(int upVotes) {
+        this.UPVOTES = upVotes;
     }
 }
