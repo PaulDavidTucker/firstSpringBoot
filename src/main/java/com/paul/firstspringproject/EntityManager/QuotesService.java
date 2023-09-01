@@ -3,11 +3,11 @@ package com.paul.firstspringproject.EntityManager;
 import com.paul.firstspringproject.Model.Quotes;
 
 
-import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class QuotesService {
@@ -25,7 +25,7 @@ public class QuotesService {
     }
 
 
-    public List<Quotes> getQuoteById(int id) {
+    public Optional<Quotes> getQuoteById(int id) {
         return quotesRepository.getQuoteById(id);
     }
 

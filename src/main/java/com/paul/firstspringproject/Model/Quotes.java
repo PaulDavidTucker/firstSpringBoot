@@ -14,9 +14,9 @@ public class Quotes {
     @Column(columnDefinition = "VARCHAR(255) NOT NULL", nullable = false)
     private String QUOTETEXT;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USERIDOFUSERWHOCREATEDQUOTE")
-    private User USERIDOFUSERWHOCREATEDQUOTE;
+    private Users USERIDOFUSERWHOCREATEDQUOTE;
 
     @Column(columnDefinition = "DATECREATED")
     private Date DATECREATED;
@@ -27,7 +27,7 @@ public class Quotes {
     public Quotes() {
     }
 
-    public Quotes(int ID, String QUOTETEXT, User USERIDOFUSERWHOCREATEDQUOTE, Date DATECREATED, int UPVOTES) {
+    public Quotes(int ID, String QUOTETEXT, Users USERIDOFUSERWHOCREATEDQUOTE, Date DATECREATED, int UPVOTES) {
         this.ID = ID;
         this.QUOTETEXT = QUOTETEXT;
         this.USERIDOFUSERWHOCREATEDQUOTE = USERIDOFUSERWHOCREATEDQUOTE;
@@ -47,11 +47,11 @@ public class Quotes {
         this.QUOTETEXT = QUOTETEXT;
     }
 
-    public User getUSERIDOFUSERWHOCREATEDQUOTE() {
+    public Users getUSERIDOFUSERWHOCREATEDQUOTE() {
         return USERIDOFUSERWHOCREATEDQUOTE;
     }
 
-    public void setUSERIDOFUSERWHOCREATEDQUOTE(User USERIDOFUSERWHOCREATEDQUOTE) {
+    public void setUSERIDOFUSERWHOCREATEDQUOTE(Users USERIDOFUSERWHOCREATEDQUOTE) {
         this.USERIDOFUSERWHOCREATEDQUOTE = USERIDOFUSERWHOCREATEDQUOTE;
     }
 
