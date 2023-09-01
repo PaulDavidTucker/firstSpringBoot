@@ -1,0 +1,18 @@
+create table Quotes(
+    ID int NOT NULL AUTO_INCREMENT,
+    QuoteText VARCHAR(255) NOT NULL,
+    UserIDOfUserWhoCreatedQuote int NOT NULL,
+    DateCreated DATE,
+    upVotes int default 0,
+    primary key (ID),
+    FOREIGN KEY (UserIDOfUserWhoCreatedQuote) REFERENCES Users(ID)
+);
+
+create table Users(
+    ID int NOT NULL AUTO_INCREMENT,
+    Username varchar(255) NOT NULL UNIQUE,
+    Password varchar(255) NOT NULL,
+    Email varchar(255),
+    Karma int DEFAULT 0,
+    PRIMARY KEY (ID)
+);
